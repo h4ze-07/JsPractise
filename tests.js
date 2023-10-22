@@ -1,5 +1,5 @@
-// const text3 = '<@Kate />:apple: <@Max/><@alisa /> :like: received:apple::apple:';
-// const text4 = '<@Kate />:apple:'
+// // const text3 = '<@Kate />:apple: <@Max/><@alisa /> :like: received:apple::apple:';
+// const text4 = '<@Kate />:apple::apple:'
 
 
 // function countEmoji(message, emoji) {
@@ -14,6 +14,8 @@
 
 //     let isCheckingName = false; 
 //     let isCheckingEmoji = false;
+//     let isCheckingCounter = false;
+//     let isCheckingChain = false;
 
 //     let constrEmoji = '';
 
@@ -23,10 +25,12 @@
 
 //         if (start === charCode) {
 //             isCheckingName = true;
+//             isCheckingChain = true;
 //         }
 
 //         if (emojiStart === charCode) {
 //             isCheckingEmoji = true;
+//             isCheckingCounter = true;
 //         }
 
 //         if (((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) && isCheckingName) {
@@ -47,6 +51,20 @@
 //         }
         
 
+//         if (((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) && isCheckingEmoji && isCheckingCounter) {
+//             constrEmoji += message[i];
+//             if (constrEmoji === emoji && isCheckingCounter && isCheckingEmoji) {
+//                 constrEmoji = '';
+//                 emojiCount++;
+//                 console.log(emojiCount);
+//                 isCheckingEmoji = false;
+//             } 
+//             else if (constrEmoji !== '' && charCode === emojiStart) {
+
+//             }
+//         }
+
+
 
 
 //         if (currentName !== '' && !isCheckingName) {
@@ -62,12 +80,40 @@
 
 
 
-// let obj = countEmoji(text3, 'apple');
-
-// console.log(obj);
+// console.log(countEmoji(text4, 'apple'));
 
 
 
-//=============================================================
-// My wallet balance is 14690 USDT. 
+let err = new Error;
 
+console.log(err);
+
+let u = undefined;
+
+console.log(u);
+
+let n = null;
+console.log(n);
+
+let i = Infinity;
+console.log(i);
+
+function foo() {
+    return
+}
+
+console.log(typeof i, typeof n, typeof u, typeof err, typeof foo);
+
+console.log(null instanceof err);
+
+function isObj(data) {
+    if (data === null || data === undefined) {
+        return false
+    }
+    if (Object.getPrototypeOf(data) !== Object.prototype) {
+        console.log('Not pure obj');
+    } else {
+        console.log('Pure obj');
+    }
+}
+isObj()

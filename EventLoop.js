@@ -1,0 +1,278 @@
+// function async1() {
+//   console.log('async1 start', 4);
+//   async2().then(() => {
+//     console.log('async1 end', 10);
+//   });
+// }
+
+// function async2() {
+//   return new Promise((resolve) => {
+//     resolve();
+//     console.log('async2', 5);
+//   })
+// }
+
+// function* generate() {
+//   console.log('generate-1', 2)
+//   yield;
+//   console.log('generate-1.2', 3)
+// }
+
+// function* generate2() {
+//   console.log('generate-2', 8)
+//   yield;
+//   console.log('generate-2.2', 9)
+// }
+
+// console.log('script start', 1);
+
+// setTimeout(function () {
+//   console.log('setTimeout', 12);
+// }, 0);
+
+// const generator1 = generate();
+// generator1.next();
+// generator1.next();
+
+// async1();
+
+// new Promise(function (resolve) {
+//     console.log('promise1');
+// }).then(function () {
+//   console.log('promise2');
+// });
+
+
+process.nextTick(() => {
+    console.log('tick 1', 2);
+})
+
+console.log('start', 1);
+
+queueMicrotask(() => {
+    console.log('mic 1', 4);
+})
+
+process.nextTick(() => {
+    console.log('tick 2', 3);
+})
+
+setImmediate(() => {
+    console.log('end', 6);
+})
+
+
+queueMicrotask(() => {
+    console.log('mic 2', 5);
+})
+
+// console.log('script end', 7);
+// const generator2 = generate2();
+// generator2.next();
+// generator2.next();
+
+
+
+// const text = '10010001'
+
+// console.log(String.fromCharCode(text, 10))
+
+// const text = 'My wallet balance is 14,00951 USDT'
+
+// function countBalance(str) {
+
+//   let result = 0;
+//   let nbersAfterComa = 1;
+
+//   let isDecimal = false;
+
+//   const zero = '0'.charCodeAt(0);
+//   const nine = '9'.charCodeAt(0);
+
+//   const coma = ','.charCodeAt(0)
+  
+
+//   for (let i = 0; i < str.length; i++) {
+//     let charCode = str.charCodeAt(i);
+
+//     if (charCode >= zero && charCode <= nine) {
+//       result = result * 10 + charCode - zero
+//       if (isDecimal) {
+//         numbersAfterComa *= 10
+//       }
+//       continue;
+//     }
+    
+//     const nextChar = str.charCodeAt(i + 1);
+
+//     if (charCode === coma && nextChar >= zero && nextChar <= nine) {
+//       isDecimal = true;
+//       continue;
+//     }
+
+//   }
+
+//   return result / numbersAfterComa;
+// }
+
+// console.log(countBalance(text))
+
+
+
+
+
+
+
+// async function async1() {
+//   console.log('async1 start', 2);
+//   async2().then(() => {
+//     console.log('async1 end', 8);
+//   });
+// }
+
+// function async2() {
+//   return new Promise(resolve => {
+//     resolve();
+//     console.log('async2', 3);
+//   });
+// }
+
+// function* generate() {
+//   console.log('generate-1', 11);
+//   yield;
+//   console.log('generate-1.2', 16);
+// }
+
+// function* generate2() {
+//   console.log('generate-2', 5);
+//   yield;
+//   console.log('generate-2.2', 18);
+// }
+
+// console.log('script start', 1); //d
+
+// setTimeout(function () {
+//   console.log('setTimeout', 13);
+// }, 0);
+
+// const generator1 = generate(); //d
+
+// async1();
+
+// const generator2 = generate2();
+
+// setTimeout(() => {
+//   console.log('some timer 1', 14);
+// }, 0);
+
+// process.nextTick(() => {
+//   console.log('next tick 1', 7);
+//   setTimeout(() => {
+//     console.log('some timer 2', 15);
+//     generator1.next();
+//   }, 0);
+// });
+
+// queueMicrotask(() => {
+//   console.log('microtask 1', 9);
+//   setTimeout(() => {
+//     console.log('some timer 3', 17);
+//   }, 0);
+// });
+
+// new Promise(function (resolve) {
+//   queueMicrotask(() => {
+//     console.log('microtask 2', 10);
+//     generator1.next();
+//   });
+
+//   console.log('promise1', 4);
+//   resolve();
+// }).then(function () {
+//   console.log('promise2', 12);
+// });
+
+// setImmediate(() => {
+//   generator2.next();
+// });
+
+// generator2.next();
+// console.log('script end', 6);
+
+
+
+
+
+
+
+
+
+
+// async function f1() {
+//     console.log('async 1', 4)
+// }
+
+// function f2() {
+//   return new Promise(resolve => {
+//     resolve();
+//     console.log('async2', 9);
+//   });
+// }
+
+// function* generate() {
+//     console.log('generate-1', 2);
+//     yield;
+//     console.log('generate-1.2', 13);
+//   }
+  
+// function* generate2() {
+//     console.log('generate-2', 3);
+//     yield;
+//     console.log('generate-2.2', 8);
+// }
+
+// const generator1 = generate();
+// const generator2 = generate2();
+
+// console.log('start', 1); //d
+
+// generator1.next() //d
+// generator2.next() //d
+
+// f1().then(() => {
+//     f2().then(() => {
+//         console.log('f2 then', 12);
+//     })
+//     console.log('async func 1', 10);
+// })
+
+// console.log('mid', 5); //d
+
+// setTimeout(() => {
+//     generator1.next()
+// }, 0)
+
+// new Promise(function() {
+//     console.log('promise 1', 6); //d
+//     queueMicrotask(() => {
+//         console.log('microtask 1', 11);
+//     })
+// })
+
+// process.nextTick(() => {
+//     generator2.next()
+// })
+
+// console.log('end', 7); //d
+
+
+
+//MACRO
+
+
+
+// MICRO
+
+
+
+//TICKS

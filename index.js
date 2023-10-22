@@ -406,7 +406,7 @@ function countBalance1(message) {
 //======================================================================
 
 const text3 = '<@Kate />:apple: <@Max/><@alisa /> :like: received:apple::apple:';
-
+const newText3 = '<@Kate />:apple: <@Max/> :apple <@liza/>drt sdifhsdif jdsf ds<@maria/><@alisa /> :like: received:apple::apple:'
 
 function countEmoji(message, emoji) {
     let result = {}
@@ -442,7 +442,7 @@ function countEmoji(message, emoji) {
         }
         
         else if (currentName !== '' && !isCheckingName) {
-            result[currentName] = ''
+            result[currentName] = 0;
             currentName = '';
             isCheckingName = false;
         }    
@@ -453,7 +453,8 @@ function countEmoji(message, emoji) {
 }
 
 
-// console.log(countEmoji(text3, 'apple'));
+console.log(countEmoji(newText3, 'apple'));
+
 
 
 
@@ -516,3 +517,13 @@ function countBalance2(str) {
 
 // console.log(countBalance2(text4));
 // console.log(countBalance2(text5));
+
+
+let s = 'abcdefg';
+
+let newS = s.replace(/[abe]/gi, function(m, o) {
+    console.log(o);
+    return 'B'
+})
+
+console.log(newS);
