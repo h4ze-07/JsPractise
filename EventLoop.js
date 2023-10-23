@@ -43,28 +43,29 @@
 // });
 
 
-process.nextTick(() => {
-    console.log('tick 1', 2);
-})
+// process.nextTick(() => {
+//     console.log('tick 1', 2);
+// })
 
-console.log('start', 1);
+// console.log('start', 1);
 
-queueMicrotask(() => {
-    console.log('mic 1', 4);
-})
+// queueMicrotask(() => {
+//     console.log('mic 1', 4);
+// })
 
-process.nextTick(() => {
-    console.log('tick 2', 3);
-})
+// process.nextTick(() => {
+//     console.log('tick 2', 3);
+// })
 
-setImmediate(() => {
-    console.log('end', 6);
-})
+// setImmediate(() => {
+//     console.log('end', 6);
+// })
 
 
-queueMicrotask(() => {
-    console.log('mic 2', 5);
-})
+// queueMicrotask(() => {
+//     console.log('mic 2', 5);
+// })
+
 
 // console.log('script end', 7);
 // const generator2 = generate2();
@@ -116,9 +117,6 @@ queueMicrotask(() => {
 // }
 
 // console.log(countBalance(text))
-
-
-
 
 
 
@@ -265,14 +263,3 @@ queueMicrotask(() => {
 
 // console.log('end', 7); //d
 
-
-
-//MACRO
-
-
-
-// MICRO
-
-
-
-//TICKS

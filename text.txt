@@ -1,11 +1,8 @@
 //MACRO
-console.log('end');
+
 
 //MICRO
-console.log('mic 1');
-console.log('mic 2');
+
 
 
 //TICKS
-console.log('tick 1');
-console.log('tick 2');

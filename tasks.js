@@ -1650,3 +1650,194 @@ const coffeeLimits = (y, m, d) => {
 // let coun = new Counter()
 // coun.incr()
 // console.log(coun == 1);
+
+
+
+// const oneTwoThree = n => {
+//     if (n == 0) return ['0', '0'] 
+//     let right = ''.padEnd(n, '1');
+
+//     let left = '';
+//     if (n < 10) {
+//         left = String(n)
+//     } else if (n >= 10) {
+//         let nines = ''.padEnd(+String(n).slice(0, -1), '9');
+//         let hunds = n >= 100 ? +String(n)[0] : 0;
+//         let modifiedN = String(n);
+//         let counter = -1;
+//         while (modifiedN.length > 1) {
+//             modifiedN = String(modifiedN.split("").reduce((pr, curr) => +pr + +curr));
+//             counter++;
+//         }
+//         left = nines + "".padEnd(hunds, '9') + "".padEnd(counter, '9') + modifiedN;
+//     }
+    
+
+//     return [left, right];
+// }
+// console.log(oneTwoThree(19));
+
+// const explode = arr => {
+//     if (typeof arr[0] === 'string' && typeof arr[1] === 'string') return 'Void!';
+//     let score = 0;
+//     let res = [];
+//     if (typeof arr[0] === 'number' && typeof arr[1] === 'number') {
+//         score = arr.reduce((pr, cur) => pr+cur)
+//     } else if (typeof arr[0] === 'number' || typeof arr[1] === 'number') {
+//         score = typeof arr[0] === 'number' ? arr[0] : arr[1];
+//     }
+    
+//     for (let i = 0; i < score; i++) {
+//         res.push(arr)
+//     }
+//     return res;
+// }
+
+// console.log(explode([2, 2]));
+
+
+// const f = (arr) => {
+//     let counter = 0;
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if ((arr[i] < 0 && arr[i+1] >= 0) || (arr[i] >= 0 && arr[i+1] < 0)) {
+//             counter+=1
+//         } 
+//     }
+//     return counter;
+// }
+
+// console.log(f([-47,84,-30,-11,-5,74,77]));
+
+// const f = arr => arr.map(el => Number.isInteger(Math.sqrt(el)) ? Math.sqrt(el) : Math.pow(el, 2))
+// console.log(f([4,3,9,7,2,1]));
+
+// const ipsBetween = (start, end) => {
+//     const indexes = [3, 2, 1, 0];
+//     let arr1 = start.split('.').map((el, i) => +el*256**indexes[i]).reduce((pr, curr) => pr + curr)
+//     let arr2 = end.split('.').map((el, i) => +el*256**indexes[i]).reduce((pr, curr) => pr + curr)
+
+//     return arr2 - arr1
+// }
+// console.log(ipsBetween("20.0.0.10", "20.0.1.0"));
+
+// const data1 = {
+//     id : 1,
+//     items : [{
+//       id : 2,
+//       items : [{
+//           id : 3,
+//           items : [
+//           {id : 4},
+//           {id : 5}
+//           ]
+//         },{
+//           id : 6,
+//           items : [{id : 7}]
+//         }]
+//       }]
+//   }
+
+
+// const extractIds = data => {
+//     let res = [];
+    
+//     for (const el of Object.values(data)) {
+//         if (!(Array.isArray(el))) {
+//             res.push(el)
+//         } else if (Array.isArray(el)) {
+//             for (const i of el) {
+//                 res.push(...extractIds(i))
+//             }
+//         }
+//     }
+
+//    return res;
+// }
+
+// console.log(extractIds(data1));
+
+// const parseNumbers = a => a.map(el =>{ console.log(el); return +el < 0 ? Math.ceil(+el) : Math.floor(+el)})
+
+// const parseNumbers=a=>a.map(el=>parseInt(el))
+// console.log(parseNumbers(['-1','0','1']));
+
+// const spinWords = s => {
+//     return s.split(" ").map(el => el.length > 4 ? el.split("").reverse().join("") : el).join(" ")
+// }
+
+// console.log(spinWords("Seriously this is the last one"));
+
+// const f = arr => {
+//     let res ={};
+//     for (const i of arr) {
+//         res[i] = (res[i] || 0) + 1;
+//     }
+//     for (const i in res) {
+//         if (res[i] % 2 != 0) return +i;
+//     }
+// }
+// console.log(f([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
+
+
+// const likes = n => {
+//     const phS = 'likes this', phP = 'like this';
+//     if (n.length == 0) return 'no one '+phS;
+//     if (n.length == 1) return `${n[0]} ${phS}`;
+//     if (n.length == 2) return `${n[0]} and ${n[1]} ${phP}`;
+//     if (n.length == 3) return `${n[0]}, ${n[1]} and ${n[2]} ${phP}`;
+//     if (n.length >= 4) return `${n[0]}, ${n[1]} and ${n.length - 2} others ${phP}`;
+// }
+
+// console.log(likes(["Alex", "Jacob", "Mark", "Max", 'vlad']));
+
+// const createPhoneNumber = n => {
+//     let f = '', s ='', t='';
+//     for (let i = 0; i < n.length; i++) {
+//         if (i <= 3) f += n[i];
+//         if (i > 3 && i <= 6) s += n[i];
+//         if (i > 6) t += n[i];
+        
+//     }
+
+//     return `(${f}) ${s}-${t}`;
+// }
+
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+
+// const f = s => {
+//     let res = {};
+//     let counter = 0;
+//     let arr = s.toLowerCase().split("");
+//     for (let i of arr) {
+//         res[i] ? res[i]++ : res[i] = 1;
+//     }
+//     Object.values(res).forEach(el => {
+//         if (el>=2) counter++;
+//     })
+//     return counter;
+// }
+
+// console.log(f('abcde'));
+
+// const isValidWalk = a => {
+//     if (a.length !== 10) return false;
+//     let d = 0;
+//     for (let el of a) {
+//       switch(el) {
+//           case 'n': d++; break;
+//           case 's': d--; break;
+//           case 'e': d+=2; break;
+//           case 'w': d-=2; break;
+//       }
+//       console.log(d);
+//     }
+//     return d==0 ? true : false
+// }
+
+// const alphabetPosition = s => s.toLowerCase().replace(/[^a-z]/gi, "").split("").map(el => el.charCodeAt(0)-96).join(" ")
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+// const duplicateEncode = (s) => {
+//     let newS = s.toLowerCase().split("")
+//     return newS.map(el => newS.filter(i => i == el).length == 1 ? '(' : ')').join("")
+// }
