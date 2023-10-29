@@ -138,22 +138,22 @@
 // function* generate() {
 //   console.log('generate-1', 11);
 //   yield;
-//   console.log('generate-1.2', 16);
+//   console.log('generate-1.2', 17);
 // }
 
 // function* generate2() {
 //   console.log('generate-2', 5);
 //   yield;
-//   console.log('generate-2.2', 18);
+//   console.log('generate-2.2', 15);
 // }
 
-// console.log('script start', 1); //d
+// console.log('script start', 1);
 
 // setTimeout(function () {
 //   console.log('setTimeout', 13);
 // }, 0);
 
-// const generator1 = generate(); //d
+// const generator1 = generate();
 
 // async1();
 
@@ -166,7 +166,7 @@
 // process.nextTick(() => {
 //   console.log('next tick 1', 7);
 //   setTimeout(() => {
-//     console.log('some timer 2', 15);
+//     console.log('some timer 2', 16);
 //     generator1.next();
 //   }, 0);
 // });
@@ -174,7 +174,7 @@
 // queueMicrotask(() => {
 //   console.log('microtask 1', 9);
 //   setTimeout(() => {
-//     console.log('some timer 3', 17);
+//     console.log('some timer 3', 18);
 //   }, 0);
 // });
 
@@ -207,53 +207,53 @@
 
 
 // async function f1() {
-//     console.log('async 1', 4)
+//     console.log('async 1', 3)
 // }
 
 // function f2() {
 //   return new Promise(resolve => {
 //     resolve();
-//     console.log('async2', 9);
+//     console.log('async2', 8);
 //   });
 // }
 
 // function* generate() {
 //     console.log('generate-1', 2);
 //     yield;
-//     console.log('generate-1.2', 13);
+//     console.log('generate-1.2', 12);
 //   }
   
 // function* generate2() {
 //     console.log('generate-2', 3);
 //     yield;
-//     console.log('generate-2.2', 8);
+//     console.log('generate-2.2', 7);
 // }
 
 // const generator1 = generate();
 // const generator2 = generate2();
 
-// console.log('start', 1); //d
+// console.log('start', 1);
 
-// generator1.next() //d
-// generator2.next() //d
+// generator1.next()
+// generator2.next()
 
 // f1().then(() => {
 //     f2().then(() => {
-//         console.log('f2 then', 12);
+//         console.log('f2 then', 11);
 //     })
-//     console.log('async func 1', 10);
+//     console.log('async func 1', 9);
 // })
 
-// console.log('mid', 5); //d
+// console.log('mid', 4); 
 
 // setTimeout(() => {
 //     generator1.next()
 // }, 0)
 
 // new Promise(function() {
-//     console.log('promise 1', 6); //d
+//     console.log('promise 1', 5);
 //     queueMicrotask(() => {
-//         console.log('microtask 1', 11);
+//         console.log('microtask 1', 10);
 //     })
 // })
 
@@ -261,5 +261,4 @@
 //     generator2.next()
 // })
 
-// console.log('end', 7); //d
-
+// console.log('end', 6); 

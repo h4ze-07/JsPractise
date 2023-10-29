@@ -1841,3 +1841,789 @@ const coffeeLimits = (y, m, d) => {
 //     let newS = s.toLowerCase().split("")
 //     return newS.map(el => newS.filter(i => i == el).length == 1 ? '(' : ')').join("")
 // }
+
+
+// const solve = a => {
+//     let res = [];
+//     for (let i = 0; i < a.length-1; i++) {
+//         let counter = 0;
+//         for (let j = i+1; j < a.length; j++) {
+//             if (a[i] > a[j]) {
+//                 counter++
+//             }
+//         }
+//         if (counter === a.length-(i+1)) {
+//             res.push(a[i])
+//         }
+//     }
+//     return res.concat(a.at(-1))
+//     return [...new Set(res.concat(a.at(-1)))]
+// }
+
+// console.log(solve([75,47,42,56,13,55]));
+
+// const strongEnough = (earthquake, age) => {
+//     const strength = earthquake.map(el => el.reduce((a, b) => a + b)).reduce((a, b) => a*b);
+//     let hp = 1000;
+//     for (let i = 0; i < age; i++) {
+//         hp = hp - 0.01*hp;
+//     }
+//     return hp - strength >= 0 ? "Safe!" : "Needs Reinforcement!";
+// }
+
+// console.log(strongEnough([[ 5, 8, 7 ], [ 3, 3, 1 ], [ 4, 1, 2 ]], 100));
+
+// const f = s => s === Array.from(new Set(s)).join``
+// console.log(f('Dermatoglyphics'));
+
+// console.log(Number.isInteger(Math.sqrt(26)));
+
+// const XO = s => {
+//     let letters = {'x': 0, 'o': 0};
+
+//     for (let i of s.toLowerCase()) {
+//         if (i in letters) letters[i]++;
+//     }
+
+//     return letters.x == letters.o
+// }
+
+// s.split(" ").map(el => el[0].toUpperCase()).join` `
+
+// String.prototype.toJadenCase = function () {
+//     return this.split(" ").map(el => el[0].toUpperCase()+el.substring(1)).join` `
+// };
+
+// const f = s => s.split(" ").sort((a, b) => a.length - b.length)[0].length;
+// f("bitcoin take over the world maybe who knows perhaps")
+
+// const f = s => {
+//     let newS = '';
+//     for (let i of s) {
+//         if (i == 'A') {
+//             newS += i.replace(/A/gi, 'T')
+//         } else if (i == 'T') {
+//             newS += i.replace(/T/gi, 'A')
+//         } else if (i == 'G') {
+//             newS += i.replace(/G/gi, 'C')
+//         } else if (i == 'C') {
+//             newS += i.replace(/C/gi, 'G')
+//         }
+//     }
+//     return newS;
+// };
+
+// console.log(f('GTATA'));
+
+// const sumTwoSmallestNumbers = a => {
+//     let newA = a.toSorted((a,b) => a -b);
+//     return newA[0]+newA[1]
+// }
+// f([5, 8, 12, 19, 22])
+
+// const maskify = s => {
+//     if (s.length <= 4) return s;
+//     return s.slice(0,-4).replace(/./gi, '#') + s.slice(-4);
+// }
+// console.log(maskify('qwert'));
+
+// function getSum(a, b) {
+//     let res = [];
+//     while (a <= b) {
+//         res.push(a)
+//         a++;
+//     }
+//     return res.reduce((a,b) => a+b) || 0
+// }
+
+// console.log(getSum(0, 1));
+
+// const longest = (a, b = '') => Array.from(new Set(a.concat(b))).sort().join``
+
+// const f = s => 
+//     s.split(/[_-]/gi).map((el, ind) => {
+//         if (ind==0) {
+//             return el
+//         } else if (ind >= 1) {
+//             return el[0].toUpperCase() + el.slice(1)
+//         }
+//     }).join``
+
+// f("The-stealth_warrior")
+
+// const f = s => {
+//     let newS = '';
+//     for (let i of s) {
+//         const num = Math.round(Math.random())
+//         newS += num == 0 ? i.toLowerCase() : i.toUpperCase()
+//     }
+//     return newS
+// }
+
+// f('Held')
+
+
+// const digitalRoot = n => {
+//     let res = +String(n).split``.reduce((a,b) => +a + +b);
+//     return res < 10 ? res : digitalRoot(res);
+// }
+
+// const f = s => s.split(" ").sort((a,b) => parseInt(a.split``.sort()) - parseInt(b.split``.sort()));
+
+// console.log(f('is2 Thi1s T4est 3a'));
+
+// console.log('is2'.split``.sort());
+
+// const f = n => {
+//     let newA = [], arr = Array.isArray(n) ? [...n] : n.split``;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] == arr[i-1]) {
+//             continue;
+//         }
+//         newA.push(arr[i]);
+//     }
+
+//     console.log(newA);
+// }
+// f([1,2,2,3])
+
+// const decodeMorse = code => {
+//     const ref = { 
+//         '.-':     'a',
+//         '-...':   'b',
+//         '-.-.':   'c',
+//         '-..':    'd',
+//         '.':      'e',
+//         '..-.':   'f',
+//         '--.':    'g',
+//         '....':   'h',
+//         '..':     'i',
+//         '.---':   'j',
+//         '-.-':    'k',
+//         '.-..':   'l',
+//         '--':     'm',
+//         '-.':     'n',
+//         '---':    'o',
+//         '.--.':   'p',
+//         '--.-':   'q',
+//         '.-.':    'r',
+//         '...':    's',
+//         '-':      't',
+//         '..-':    'u',
+//         '...-':   'v',
+//         '.--':    'w',
+//         '-..-':   'x',
+//         '-.--':   'y',
+//         '--..':   'z',
+//         '.----':  '1',
+//         '..---':  '2',
+//         '...--':  '3',
+//         '....-':  '4',
+//         '.....':  '5',
+//         '-....':  '6',
+//         '--...':  '7',
+//         '---..':  '8',
+//         '----.':  '9',
+//         '-----':  '0',
+//       };
+
+//       return code.split('   ').map(el => {
+//         return el.split(" ").map(i => ref[i]).join``
+//       }).join` `.trim()
+// }
+
+// // const decodeMorse = code => {
+// //     return code.split('   ').map(el => {
+// //       return el.split(" ").map(i => MORSE_CODE[i]).join``
+// //     }).join` `.trim()
+// // }
+
+// decodeMorse('...---...')
+
+// const sort = a => {
+//     let odd = [], even = [];
+//     for (let i = 0; i < a.length; i++) {
+//         const el = a[i];
+//         if (el%2!==0) {
+//             odd.push([`${i}`, `${el}`])
+//         } else {
+//             even.push([`${i}`, `${el}`])
+//         }
+//     }
+
+//     let objE = Object.fromEntries(even);
+//     let objO = Object.fromEntries(odd);
+//     let sortedOdd = Object.values(objO).sort((a,b) => a-b);
+
+//     let count = 0;
+//     for (let key in objO) {
+//         objO[key] = sortedOdd[count]
+//         count++;
+//     }
+
+//     let obj = Object.assign(objE, objO);
+//     return Object.entries(obj).map(el => +el[1]);
+
+    
+// }
+
+// const sort = a => {
+//     const odd = a.filter(el => el % 2 !== 0).sort((a,b) => a-b);
+//     return a.map(el => el % 2 !== 0 ? odd.shift() : el);
+// }
+
+// sort([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
+
+// const findMissingLetter = a => {
+//     for (let i = 0; i < a.length-1; i++) {
+//         const char = a[i].charCodeAt(0);
+//         const nextChar = a[i+1].charCodeAt(0) || 0;
+//         if (nextChar - char !== 1) {
+//             return String.fromCharCode(char+1)
+//         }
+//     }
+// }
+
+// console.log(findMissingLetter(['a','b','c','d','f']));
+
+
+// const f = s => {
+//     let count = 0;
+//     s.replace(/[n-z]/gi, () => count++);
+//     return `${count}/${s.length}`;
+// }
+// f('aaaxbbbbyyhwawiwjjjwwm')
+
+// const f = (p0, per, aug, p) => {
+//     let counter = 1;
+//     while (p0 < p) {
+//         p0 = p0 + p0 * (per/100) + aug;
+//         console.log(p0);
+
+//         counter++;
+//     }
+//     return counter-1;
+// }
+
+// console.log(f(1500000, 2.5, 10000, 2000000));
+
+// const f = a => {
+//     if (a.length == 1) return [a[0], a[0]];
+//     const arr = a.sort((a,b)=>a-b);
+//     return [a[0], a[a.length-1]]
+// }
+
+
+// const uglify_word = s => {
+//     let flag = 1;
+//     let newS = '';
+//     for (let el of s) {
+//         if (el.match(/[a-zA-Z]/g)) {
+//             if (flag % 2 !== 0) {
+//                 newS += el.toUpperCase();
+//                 flag++;
+//             } else {
+//                 newS += el.toLowerCase();
+//                 flag++;
+//             }
+//         } else {
+//             newS += el;
+//             flag = 1;
+//         }
+//     }
+//     return newS;
+// }
+
+// console.log(uglify_word('Hello World'));
+
+// const f = n => {
+//     let newN = 0, strFromN = ""+n;
+//     for (let el of strFromN) {
+//         newN += Math.pow(+el ,strFromN.length)
+//     }
+//     return n === +newN;
+// }
+
+// console.log(f(122));
+
+
+// const findUniq = a => {
+//     const arrFrSet = Array.from(new Set([...a]));
+//     for (let el of arrFrSet) {
+//         let len = a.filter(i => i === el).length;
+//         if (len === 1) {
+//             return el;
+//         }
+//     }
+// }
+
+// console.log(findUniq([ 3, 10, 3, 3, 3 ]));
+
+// const high = x => {
+//     return x.split` `.sort((a,b) => {
+//         let nA = a.split``.map(el => 26 - (122 - el.charCodeAt(0))).reduce((a,b) => a+b)
+//         let nB = b.split``.map(el => 26 - (122 - el.charCodeAt(0))).reduce((a,b) => a+b)
+
+//         if (nB > nA) {
+//             return 1;
+//         } else if (nB < nA) {
+//             return -1
+//         } else if (nB == nA) {
+//             return 0;
+//         }
+//     })[0] 
+// }
+
+// console.log(high('what time are we climbing up the volcano'));
+
+
+// const isPrime = s => {
+//     if (s.toLowerCase().includes('prime')) return true;
+//     let n = parseInt(s);
+//     if (n < 2) return false;
+//     let root = Math.floor(Math.sqrt(n)); 
+//     console.log(n, root);
+//     for (let i = 2; i <= root; i++) {
+//         if (n % i === 0) {
+//             return false;
+//         } else {
+//             return true;
+//         }   
+//     }
+//     return false;
+// }
+
+// console.log(isPrime(629));
+
+
+// const rowSumOddNumbers = n => {
+//     if (n <= 1) return 1;
+//     let res = 0, 
+//         start = n*n - (n-1), 
+//         end = n*n + (n-1);
+//     for (let i = start; i <= end; i+=2) {
+//         res += i;
+//     }
+//     return res;
+// }
+
+// f(3)
+
+// const isThueMorse = seq => {
+    
+
+//     let testSeq = '0';
+
+//     for (let i=testSeq.length; i < seq.length * 2; i+=testSeq.length) {
+//         let newS = '';
+//         for (let el of testSeq) {
+//             if (el === '0') newS += '1';
+//             if (el === '1') newS += '0';  
+//         }
+//         testSeq += newS;
+//     }
+
+//     for (let i = 0; i < seq.length; i++) {
+//         console.log(seq[i], +testSeq[i]);
+//         if (seq[i] !== +testSeq[i]) {
+//             return false
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(isThueMorse([0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0,1,0,1,1,0,1,1,0,0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0,0,1,1,0,1]));
+
+// const comp = (arr1, arr2) => {
+//     if ((arr1 == null) || (arr2 == null)) return false;
+//     if (arr1.length === 0 && arr2.length === 0) return true;
+    
+
+//     let newArr = arr2.map(el => Math.sqrt(el));
+
+//     console.log(arr1);
+
+//     for (let i = 0; i < arr1.length; i++) {
+//         for (let j = 0; j < newArr.length; j++) {
+//             if (arr1[i] === newArr[j]) {
+//                 newArr.splice(j, 1)
+//                 break;
+//             }
+//         }
+        
+//     }
+
+//     console.log(newArr.length);
+
+//     return !(~~newArr.length);
+// }
+
+// let a1 = [10, 6, 7, 10, 9, 5, 6, 8, 0, 9, 2, 1, 3, 7, 1, 8, 9, 2, 6, 6, 2, 1, 10];
+// let a2 = [49, 36, 81, 49, 81, 36, 4, 36, 1, 4, 25, 1, 100, 9, 4, 100, 1, 81, 64, 36, 64, 100, 1];
+
+
+// console.log(comp(a1, a2));
+
+// const nextBigger = n => {
+//     let arr = (''+n).split``;
+
+//     const fact = n =>  {
+//         let res = 1;
+//         for (let i = n; i > 0; i--) {
+//             res *= i;
+//         }
+//         return res;
+//     }
+
+//     let testValues = [];
+//     let indexes = [];
+
+//     for (let  i = 0; i < fact(arr.length); i++) {
+//         let newIn = [];
+//         for (let j = 0; j < arr.length; j++) {
+//             let ind = Math.floor(Math.random() * arr.length);
+//             if (newIn.includes(ind)) {
+//                 j--;
+//                 continue;
+//             } else {
+//                 newIn.push(ind);
+//             }
+//         }
+
+//         let newInString = JSON.stringify(newIn);
+//         if (indexes.includes(newInString)) {
+//             i--;
+//         } else {
+//             indexes.push(newInString);
+//         }
+//     }
+
+//     indexes = indexes.map(JSON.parse);
+
+//     for (let i = 0; i < indexes.length; i++) {
+//         let builtArr = [];
+//         builtArr = indexes[i].map(el => arr[el]).join``;
+//         testValues.push(builtArr);
+//     }
+
+
+//     let newN = testValues.map(el => +el).filter(el => el > n).sort((a,b) => a - b)
+//     return newN.length == 0 ? -1 : newN[0];
+// }
+
+// console.log(nextBigger(144));
+
+// const findNextSquare = n => !Number.isInteger(Math.sqrt(n)) ?  -1 : Math.pow(Math.sqrt(n)+1, 2);
+// console.log(findNextSquare(625));
+
+// const number = (busStops) => {
+//     return busStops.map(el => el[0] - el[1]).reduce((pr, curr) => pr + curr)
+//     console.log(arr);
+// }
+
+// number([[10,0],[3,5],[5,8]])
+
+// const someF = s => {
+//     return s.split(' ').map(el => el.split('').reverse().join``).join` `;
+// }
+// console.log(someF('double  spaces'));
+
+// const f = s => {
+//     if (s.length % 2 !== 0) s = s += '_';
+//     return s.match(/../gi) || [];
+// }
+
+// console.log(f(""));
+
+// const f = n => {
+//     let res = [];
+//     let start = n;
+//     let finish = 1;
+//     while (finish <= start) {
+//         let qS = start*2-1, qP = n - start;
+//         let stars = ''.padEnd(qS, '*');
+//         let pad = ''.padEnd(qP, " ");
+//         res.push(pad + stars + pad)
+//         start--;
+//     }
+//     return res.reverse()
+// }
+
+// f(6)
+
+// const f = arr => {
+//     let newA = arr.filter(el => (/(:|;)( |-|~|)(\)|D)/gi).test(el));
+//     console.log(newA);
+//     // console.log(arr.filter(el => (/(:|;)( |-|~)(\)|D)/gi).test(el)).length);   
+// }
+
+// f([';]', ':[', ';*', ':$', ';-D'])
+
+// const f = str => {
+//     return str.replace(/[A-Z]/g, (m) => ` ${m}`);
+// }
+// console.log(f('camelCasing'));
+
+// const validatePIN = PIN => {
+//     return /([0-9]{4}|[0-9]{6})/.test(PIN)
+// }
+
+// console.log(validatePIN('123458'));
+
+
+
+
+
+// const f = (d, vS, currV) => {
+//     let i = vS.indexOf(currV);
+//     if (i == -1) return null;
+    
+//     console.log(i);
+
+//     let res = i + d;
+    
+
+//     while (res < 0 || res > vS.length - 1) {
+//         if (res > vS.length - 1) {
+//             res -= vS.length
+//         } 
+        
+//         if (res < 0) {
+//             res += vS.length
+//         }
+//     }
+
+
+
+//     return vS[res];
+// }
+
+// f(1, [1,2,2,3], 2)
+
+// const SeriesSum = (n) => {
+//     if (n == 0) return n.toFixed(2);
+
+//     let res = 1;
+//     const seriesEl = v => 1/v;
+//     let i = 2, currVal = 4;
+//     while (i <= n) {
+//         res += seriesEl(currVal);
+//         currVal += 3;
+//         i++;
+//     }
+
+//     return res.toFixed(2)
+// }
+
+// console.log(SeriesSum(5));
+
+// function removeSmallest(arr) {
+//     const lowestItem = [...arr].sort((a,b) => a - b)[0];
+//     let newArr = [...arr];
+//     newArr.splice(arr.indexOf(lowestItem), 1);
+//     return newArr
+// }
+
+// console.log(removeSmallest([2,2,2,1,2,1]));
+
+// const f = arr => arr.map((el,ind) => `${ind+1}: ${el}`);
+// f(['a', 'b', 'c'])
+
+// const f = (s, f) => {
+//     let counter = 0;
+//     while (s <= f) {
+//         if ((''+s).includes('5')) {
+//             s++;
+//             continue;
+//         };
+//         console.log(s+"");
+//         counter++;
+//         s++;
+//     }
+//     console.log(counter);
+//     return counter;
+// }
+
+// f(44, 58)
+
+
+// const stray = arr => {
+//     let unique = [...Array.from(new Set([...arr]))]
+//     for (let el of unique) {
+//         if (arr.filter(i => i === el).length === 1) return el;
+//     }
+// }
+
+// console.log(stray([1,1,2]));
+
+// const gimme = a => {
+//     let sortedA = [...a].sort((a,b) => a-b);
+//     console.log(sortedA);
+//     return a.indexOf(sortedA[1])
+// }
+
+// console.log(gimme([5, 10, 14]));
+
+// function arrayDiff(a, b) {
+
+//   let newA = [...a];
+
+//   for (let i = 0; i < newA.length; i++) {
+    
+//     console.log();
+    
+//     for (let j = 0; j < b.length; j++) {
+//         if (newA[i] == b[j]) {
+//             newA.splice(i, 1)
+//             i--;
+//         }
+//     }
+    
+//   }
+
+//   return newA;
+// }
+// console.log(arrayDiff([1,2,2], [2]));
+
+// const isPangram = s => {
+//     let res = {};
+//     for (let el of s.toLowerCase()) {
+//         if ((/[a-z]/gi).test(el)) {
+//             res[el] ? res[el]++ : res[el] = 1;  
+//         }
+//     }
+//     return Object.keys(res).length == 26 ? true : false;
+// }
+
+// isPangram('The quick brown fox jumps over the lazy dog')
+
+// const solution = n => {
+
+// }
+
+// String.prototype.camelCase=function(){
+//     if (this.length >= 1) {
+//       return this.split` `.map(el => el[0].toUpperCase() + el.slice(1)).join``;
+//     } else {
+//       return this.valueOf();
+//     }
+//   }
+
+//   console.log(''.camelCase());
+
+// const f = s => {
+//     console.log(s.split` `.map(el => el.split``.map((c, i) => i%2 == 0 ? c.toUpperCase() : c.toLowerCase()).join``).join` `);
+// }
+
+// f('String and newo')
+
+// const partsSums = arr => {
+//     let total = arr.reduce((pr, cur) => {return pr + cur}, 0);
+//     let res = [total];
+
+//     for (let i = 1; i < arr.length; i++) {
+//         total -= arr[i-1];
+//         res.push(total);
+        
+//     }
+    
+//     console.log([...res, 0]);
+//     return [...res, 0]
+// }
+
+// partsSums([1,2,3,4,5,6])
+
+// const f = s => {
+//     let res = s.split(/[a-z]/gi).filter(el => el.length >= 1).map(el => +el).sort((a,b) => b - a)[0];
+//     console.log(res);
+// }
+
+
+// f("gh12cdy695m1")
+
+// const f = arg => {
+//     if (typeof arg === 'string') {
+//         return arg.split``.reverse().join``;
+//     } else if (typeof  arg === 'number') {
+//         return +((''+arg).split``.reverse().join``);
+//     } else {
+//         return arg;
+//     }
+// }
+
+// console.log(f());
+
+
+
+// const switcher = x => {
+//     const chars = {
+//         '29': ' ', '28': '?', '27': '!', '26': 'a', '25': 'b', '24': 'c', '23': 'd',
+//         '22': 'e', '21': 'f', '20': 'g', '19': 'h', '18': 'i', '17': 'a', '16': 'k',
+//         '15': 'l', '14': 'm', '13': 'n', '12': 'o', '11': 'p', '10': 'q', '9': 'r', 
+//         '8': 's', '7': 't', '6': 'u', '5': 'v', '4': 'w', '3': 'x', '2': 'y', '1': 'z',
+//     }
+
+//     return x.map(el => chars[el]).join``;
+// }
+
+// const maxProduct = (nums, s) => [...nums].sort((a,b) => b-a).slice(0, s).reduce((a,b) => a*b);
+
+// const min = (list, s) => {
+//     const minV = Math.min(...list);
+//     return s === 'value' ? minV : list.indexOf(minV);
+// }
+
+// const f = arr => {
+//     if (arr == []) {
+//         return 0;
+//     }
+//     let res = {};
+//     for (let i = 0; i < arr.length; i++) {
+//         res[arr[i]] ? res[arr[i]]++ : res[arr[i]] = 1;
+//     }
+//     return Math.max(...Object.values(res));
+// }
+
+// const isLeapYear = y => {
+//     switch (true) {
+//         case y%4 == 0 && y%100 !== 0:
+//             return true;
+//         case y%400 == 0:
+//             return true;
+//         default:
+//             return false;
+//     }
+// }
+
+// console.log(isLeapYear(2100));
+
+// const humanYearsCatYearsDogYears = y => {
+//     let catYs = 0, dogYs = 0;
+//     for (let i = 1; i <= y; i++) {
+//         if (i == 1) {
+//             catYs+=15;
+//             dogYs+=15;
+//         } else if (i == 2) {
+//             catYs+=9;
+//             dogYs+=9;
+//         } else {
+//             catYs+=4;
+//             dogYs+=5;
+//         }
+//     }
+//     return [y, catYs, dogYs]
+// }
+
+// console.log(humanYearsCatYearsDogYears(10))
+
+// const moveZeros = arr => [...arr.filter(el => el !== 0), ...arr.filter(el => el === 0)];
+// console.log(moveZeros([ 'a', 'b', null, 'c', 'd', 1, false, 1, 3, [], 1, 9, {}, 9, +0, +0, +0, false, +0, +0, [], +0, +0, +0, +0, +0 ]));
+
+// class Solution {
+//     static main(arg) {
+//         console.log('Hello World!');
+//     }
+// }
+
+// Solution.main('Greet')
