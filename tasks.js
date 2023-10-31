@@ -2627,3 +2627,216 @@ const coffeeLimits = (y, m, d) => {
 // }
 
 // Solution.main('Greet')
+
+  
+// const findDup = arr => arr.sort((a,b) => a - b).filter((_, i, arr) => arr[i] == arr[i+1])[0];
+
+// console.log(findDup([1,3,2,5,4,5,7,6]));
+
+// const f = year => {
+//     year++;
+//     while (new Set(...[year+''.split``]).size !== 4) {
+//         year++;
+//     }
+//     return year;
+// } 
+
+// f(1234)
+
+// const elevatorDistance = arr => {
+//     let res = 0;
+//     for (let i = 1; i < arr.length; i++ ) {
+//         res += Math.abs(arr[i] - arr[i-1])
+//     }
+//     return res;
+// }
+
+// const deleteNth = (arr, n) => {
+//     let vals = {}, newA = [...arr], inds = [];
+
+//     for (let i = 0; i < newA.length; i++) {
+//         vals[newA[i]] ? vals[newA[i]]++ : vals[newA[i]] = 1;
+//         if (vals[newA[i]] > n) {
+//             newA.splice(i, 1)
+//             i--;
+//         }
+//     }
+    
+
+
+//     return newA;
+// }
+
+// deleteNth([1,2,3,1,1,2,1,2,3,3,2,4,5,3,1], 3)
+
+// const f = s => {
+//     let res = [];
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] == " ") continue;
+//         res.push(s.slice(0, i)+s[i].toUpperCase()+s.slice(i+1)) 
+//     }
+
+//     return res;
+// }
+
+// f('helloh')
+
+// let a = 'hello';
+
+// console.log(a.slice(0, 3) + a[3].toUpperCase()+a.slice(4));
+
+
+// const firstNonRepeatingLetter = s => {
+//     let res = {}, value = '';
+//     let newS = s.toLowerCase()
+//     for (let i = 0; i < newS.length; i++) {
+//         res[newS[i]] ? res[newS[i]]++ : res[newS[i]] = 1; 
+//     }
+
+//     for (let key in res) {
+//         if (res[key] === 1) {
+//             value = key;
+//             break;
+//         }
+//     }
+//     if (value == '') return``;
+//     console.log(s.indexOf(value) == -1 ? value.toUpperCase() : value);
+//     console.log(res, value);
+//     return s.indexOf(value) == -1 ? value.toUpperCase() : value;
+// }
+
+// firstNonRepeatingLetter('a')
+
+
+// const common = (a,b,c) => {
+//     console.log(a,b,c)
+//     let res = [];
+//     for (let i = 0; i<a.length; i++) {
+//         let indB = b.indexOf(a[i]), indC = c.indexOf(a[i]);
+//         if (indB != -1 && indC != -1) {
+//             res.push(a[i]);
+//             b.splice(indB, 1);
+//             c.splice(indC, 1);
+//             a.splice(i, 1)
+//             i--;
+//         }
+//     }
+
+//     return res.length >= 1 ? res.reduce((pr,c) => pr + c) : 0;
+// }
+
+// common([1],[1],[2])
+
+// function redistributeWealth(wealth) {
+//     const avg = wealth.reduce((pr, c) => pr+c)/wealth.length;
+//     wealth.fill(avg);
+//     void wealth;
+// }
+
+// redistributeWealth(wealthUnequal)
+
+// const solution = str => {
+//     const syms = {
+//         'M': 1000,
+//         'D': 500,
+//         'C': 100,
+//         'L': 50,
+//         'X': 10,
+//         'V': 5,
+//         'I': 1
+//     } 
+
+//     let arr = str.split``.map((el,i,a) => {
+//         if (syms[a[i]] < syms[a[i+1]]) {
+//             return -[syms[el]]
+//         }
+//         return syms[el]
+//     })
+//     return arr.reduce((a,b)=>a+b)
+// }
+
+// console.log(solution('MDCLXVI'));
+
+
+// const f = ip => {
+//     let arr = ip.split('.');
+//     if (arr.length !== 4) return false;
+//     for (let i of arr) {
+//         if (+i[0] == 0) return false;
+//         if ((i.match(/[a-z]/gi) || []).length > 0) return false;
+//         if (+i < 0 || +i > 255) return false;
+//     }
+//     return true;
+// } 
+
+// console.log(f('abc.def.ghi.jkl'));
+
+// console.log('abc'.match(/[a-z]/gi).length > 0);
+
+// const f = (n, d) => {
+//     let counter = 0;
+//     for (let i = 0; i*i <= n*n; i++) {
+//         let el = i*i+``;
+//         if ((el.match(new RegExp(d, 'gi')) || []).length > 0) {
+//             counter += (el.match(new RegExp(d, 'gi'))).length;
+//         }  
+//     }
+//     return counter;
+// }
+
+// console.log(f(5750, 0));
+
+// const f = n => {
+//     while (true) {
+//         if (Math.abs(n%5) == 0) return n;
+//         n++;
+//     }
+// }
+
+// console.log(f(-6));
+
+// const f = (b,e,s) => {
+//     let res = 0;
+//     while (b<=e) {
+//         res+=b;
+//         b+=s;
+//     }
+//     return res;
+// }
+
+// console.log(f(1,5,3));
+
+// const f = (s1,s2) => {
+//     if (s1.length !== s2.length) {
+//         return false;
+//     }
+//     let newS = s1.toLowerCase().split``;
+//     let res = '';
+//     for (let i=0;i<s2.length;i++) {
+//         let ind = newS.indexOf(s2[i].toLowerCase());
+//         if (ind >=0) {
+//             newS.splice(ind, 1)
+//         }
+//     }
+//     return !(!!newS.length);
+// }
+
+// console.log(f("foefet", "toffee"));
+
+// const f = s => s.replace(/#.{0,}/gi, '')
+// console.log(f('www.codewars.com/katas/?page=1#about'));
+
+// function findSenior(list) {
+//     const highestAge = list.map(el => el.age).sort((a,b) => b-a)[0];
+//     return list.filter(el => el.age == highestAge);
+// }
+
+// function allContinents(list) {
+//     let res = {};
+
+//     for (let i = 0; i < list.length; i++) {
+//         res[list[i].continent] ? res[list[i].continent]++ : res[list[i].continent] = 1;
+//     }
+
+//     return [...Object.values(res)].length === 5;
+// }
