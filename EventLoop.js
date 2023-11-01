@@ -262,3 +262,48 @@
 // })
 
 // console.log('end', 6); 
+
+// const str = '0.000190007';
+
+// function parseNumberFromRightToLeft(str) {
+//    const dot = '.'.charCodeAt(0);
+//    const zero = '0'.charCodeAt(0);
+//    const nine = '9'.charCodeAt(0);
+   
+//    let res = 0;
+//    let counter = 0;
+
+//    let isDecimal = true;
+
+//    for (let i = str.length-1; i >= 0; i--) {
+//     let char = str[i].charCodeAt(0);
+
+//     if (isDecimal) {
+//         counter++;
+//     }
+
+//     if (char >= zero && char <= nine) {
+//         res = res + (char - zero) * 10**counter;
+//     }
+//     if (char == dot) {
+//         isDecimal = false;
+//     }
+//    }
+
+//    console.log(res/10**counter);
+// }
+
+// parseNumberFromRightToLeft(str)
+
+
+
+// const text = `Max received 2400 USDT.
+// Kate received 1900.044 USDT.
+// Andrey received 2550.23 USDT.
+// Before I confirmed first transaction platform deposit was 11750 USDT.
+// Than I send Money to charity 900 USDT and paid for flat 1600.93 USDT`;
+
+// const countBalance = str = { str.split(/[a-z]/gi).map(el => parseFloat(el))
+//  .filter(el => !Number.isNaN(el)).sort((a,b) => b-a).reduce((pr, curr) => pr - curr);
+// countBalance(text)
+

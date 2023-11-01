@@ -2840,3 +2840,162 @@ const coffeeLimits = (y, m, d) => {
 
 //     return [...Object.values(res)].length === 5;
 // }
+
+// const countDevelopers = l => l.filter(el=>el.continent = 'Europe').length;
+
+// const greetDevelopers = l => {
+//     return l.map(el => {
+//         return {...el, greeting: `Hi ${el.firstName}, what do you like the most about ${el.language}?`}
+//     })
+// }
+
+// var list1 = [
+//     { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+//     { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
+//     { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+//   ];
+
+// console.log(greetDevelopers(list1));
+
+// const f = l => l.filter(el => el.language == 'Ruby').length > 0;
+
+// const f = l => {
+//     const fList = [...l].filter(el => el.language === 'Python');
+//     return fList.length > 0 ? `${fList[0].firstName}, ${fList[0].country}` : 'There will be no Python developers'; 
+// }
+
+// let list1 = [
+//     { firstName: 'Mark', lastName: 'G.', country: 'Scotland', continent: 'Europe', age: 22, language: 'JavaScript' },
+//     { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 30, language: 'Python' },
+//     { firstName: 'Emma', lastName: 'B.', country: 'Norway', continent: 'Europe', age: 19, language: 'Clojure' }
+// ];
+
+// console.log(f(list1));
+
+// var list1 = [
+//     { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+//     { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+//     { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+//     { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+// ];
+
+// const f = l => {
+//     let res = {};
+//     const len = l.length;
+
+//     for (let i = 0; i < len; i++) {
+//         res[l[i].language] ? res[l[i].language]++ : res[l[i].language] = 1;
+//     }
+
+//     return res;
+// }
+
+// console.log(f(list1));
+
+// const f = l => {
+//     return l.every((el, ind, arr) => el.language === arr[0].language)
+// }
+
+// const isAgeDiverse = l => {
+//     let res = {
+//         teens: 0, twenties: 0, thirties: 0, forties: 0, fifties: 0, sixties: 0, seventies: 0, eighties: 0, nineties: 0, centenarian: 0,
+//     }
+
+//     l.forEach(el => {
+//         switch (true) {
+//             case el.age < 20:
+//                 res.teens++;
+//                 break;
+//             case el.age < 30:
+//                 res.twenties++;
+//                 break;
+//             case el.age < 40:
+//                 res.thirties++;
+//                 break;
+//             case el.age < 50:
+//                 res.forties++;
+//                 break;
+//             case el.age < 60:
+//                 res.fifties++;
+//                 break;
+//             case el.age < 70:
+//                 res.sixties++;
+//                 break;
+//             case el.age < 80:
+//                 res.seventies++;
+//                 break;
+//             case el.age < 90:
+//                 res.eighties++;
+//                 break;
+//             case el.age < 100:
+//                 res.nineties++;
+//                 break;
+//             case el.age >= 100:
+//                 res.centenarian++;
+//                 break;
+//         }
+//     })
+
+
+//     return Object.values(res).every(el => el >= 1);
+// }
+
+// const addUsername = l => l.map(
+//     dev => {return {...dev, username: `${dev.firstName.toLowerCase()}${dev.lastName[0].toLowerCase()}${2023 - dev.age}`}}
+// )
+
+// console.log(addUsername([{"firstName":"Harry","lastName":"K.","country":"Brazil","continent":"Americas","age":19,"language":"Python"}]));
+
+// const getAverageAge = l => Math.round(l.reduce((pr, curr) => pr + curr.age, 0) / l.length);
+// console.log(getAverageAge([{"firstName":"Harry","lastName":"K.","country":"Brazil","continent":"Americas","age":19,"language":"Python"}]));
+
+// console.log([{age: 19}].reduce((pr, curr) => pr + curr.age, 0));
+
+// const findAdmin = (l, lang) => l.filter(el => el.githubAdmin=='yes' && el.language == lang);
+
+// const isLanguageDiverse = list => {
+//     let res = {};
+//     list.forEach((el) => {
+//         res[el.language] ? res[el.language]++ : res[el.language] = 1;
+//     })
+
+//     let values = Object.values(res).sort((a,b) => b-a);
+
+//     if (values[0] / values[1] >= 2 || values[1] / values[2] >= 2) {
+//         return false
+//     } else {
+//         return true;
+//     }
+
+// }
+
+// const f = l => {
+//     let res = {};
+//     list.forEach((el) => {
+//         res[el.meal] ? res[el.meal]++ : res[el.meal] = 1;
+//     })
+//     return res;   
+// }
+
+// const findOddNames = l => l.filter(el => el.firstName.split``.map(i => i.charCodeAt(0)).reduce((pr,curr) => pr+curr,0) % 2 == 0);
+
+// console.log(findOddNames([
+//     { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' },
+//     { firstName: 'Abb', lastName: 'O.', country: 'Israel', continent: 'Asia', age: 39, language: 'Java' }
+//   ]));
+
+// const f = l => l.filter(el => Object.values(el).some(x=>x==null))
+//                     .map(el => {
+//                         let miss = '';
+//                         for (let key in el) {
+//                             if (el[key] == null) miss = key;
+//                         }
+//                         return {...el, question: `Hi, could you please provide your ${miss}.`}
+//                     });
+
+// console.log(f([
+//     { firstName: null, lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java', 
+//     question: 'Hi, could you please provide your firstName.' },
+//     { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null, 
+//     question: 'Hi, could you please provide your language.' }
+//   ]));
