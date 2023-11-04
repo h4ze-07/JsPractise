@@ -2999,3 +2999,154 @@ const coffeeLimits = (y, m, d) => {
 //     { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null, 
 //     question: 'Hi, could you please provide your language.' }
 //   ]));
+
+// const divisions = (n, d) => {
+//     if (n < d) {
+//         return 0;
+//     }
+//     let counter = 0;
+//     while (n >= d) {
+//         n = n / d;
+//         if (!Number.isInteger(n)) {
+//             n = Math.floor(n)
+//         }
+//         counter++
+//     }
+
+//     return counter;
+// }
+
+// console.log(
+//     divisions(100, 2)
+// );
+
+// const validBraces = b => {
+//     const braces = { '{':'}', '[':']', '(':')' };
+//     let list = [];
+
+//     for (let i = 0; i < b.length; i++) {
+//         if (b[i] == '{' || b[i] == '[' || b[i] == '(') {
+//             list.push(b[i])
+//         } else {
+//             let lastIn = list.pop();
+//             if (braces[lastIn] !== b[i]) {
+//                 return false;
+//             }
+//         }
+//     }
+
+//     return list.length !== 0 ? false : true;
+
+// }
+
+// console.log(validBraces("[]"));
+
+
+// function titleCase(title, minorWords) {
+//     if (minorWords) minorWords = minorWords.split(' ').map(el => el.toLowerCase());
+//     if (title == '') return '';
+//     return title.split(" ")
+//         .map((el, ind) => {
+//             if (ind == 0) {
+//                 return el[0].toUpperCase() + el.slice(1).toLowerCase()
+//             }
+//             if (minorWords && minorWords.includes(el.toLowerCase())) {
+//                 return el.toLowerCase()
+//             } else {
+//                 return el[0].toUpperCase() + el.slice(1).toLowerCase()
+//             }
+//         }).join` `;
+// }
+
+// console.log(titleCase('the quick brown fox'));
+
+// const dataReverse = data => [...data].join``.match(/.{8}/gi).reverse().join``.split``;
+
+// console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+
+// const meeting = s => {
+//     let res = s.split(';').map(el => {
+//         let innerArr = el.split(":").map(i => i.toUpperCase()).reverse();
+//         return `(${innerArr[0]}, ${innerArr[1]})`
+//     }).sort()
+
+//     return res;
+// }
+
+// meeting("Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern")
+
+// const cleanString = s => {
+//     let res = [];
+//     for (let i of s) {
+//         if (i !== '#') {
+//             res.push(i)
+//         } else {
+//             res.pop()
+//         }
+//     }
+//     return res.join``;
+// }
+
+// f('abc##d######')
+
+
+// function calculateYears(principal, interest, tax, desired) {
+//     let y = 0;
+//     while (principal < desired) {
+//         let inc = principal * interest;
+//         principal = principal + inc - (inc*tax);
+//         y++;
+//     }
+//     return y;
+// } 
+
+// calculateYears(1000,0.01625,0.18,1200)
+
+// const f = s => {
+//     let res = [];
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] == s[i].toUpperCase()) res.push(i);
+//     }
+//     return res;
+// }
+
+// const f2 = s => s.split``.map((el, i, arr) => {
+//     return arr[i] == arr[i].toUpperCase() ? i : ''
+//     }).filter(el => el!=='')
+
+// console.log(f2('CodEWaRs'));
+
+// const f =a=>a.sort((a,b)=>a-b).splice(-2)
+// console.log(f([1,2,3,4]));
+
+// const capitalize = s => {
+//     let even = '', odd = '';
+//     for (let i = 0; i < s.length; i++) {
+//         if (i % 2 == 0) {
+//             even += s[i].toUpperCase();
+//             odd += s[i].toLowerCase();
+//         } else {
+//             even += s[i].toLowerCase();
+//             odd += s[i].toUpperCase();
+//         }
+//     }
+//     return [even, odd];
+// }
+
+// function flattenAndSort(array) {
+//     return [].concat(...array).sort((a,b) => a - b);
+// }
+
+// console.log(
+//     flattenAndSort([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]])
+// );
+
+// const f = a => a.reduce((pr,curr) => pr + Math.min(...curr),0);
+
+// console.log(
+// f([
+//     [ 1, 2, 3, 4, 5 ],
+//     [ 5, 6, 7, 8, 9 ],
+//     [ 20, 21, 34, 56, 100 ]
+// ])
+// );
