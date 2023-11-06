@@ -3150,3 +3150,199 @@ const coffeeLimits = (y, m, d) => {
 //     [ 20, 21, 34, 56, 100 ]
 // ])
 // );
+
+// const diamond = n => {
+//     if (n <= 0 || n%2===0) return null;
+//     let res = [];
+//     for (let i = n; i >= 1; i = i-2 ) {
+//         let pads = '';
+//         if (i < n) {
+//             pads = " ".repeat((n-i)/2);
+//         }
+//         res.push(pads + '*'.repeat(i) + pads +'\n')
+//     }
+//     return [...res.reverse(), ...res.reverse().splice(1)].join``;
+// }
+
+// console.log(diamond(5));
+
+
+// function checkRoot(string){
+//     console.log(string)
+//       let arr = string.split(',');
+//       console.log(new Set([...arr]).size);
+//       if (arr.length !== 4 || arr.some(x=>/[a-zA-Z]/.test(x)||+x<=0) || new Set(...arr).size !== 4) return 'incorrect input';
+//       if (arr.join`,` !== [...arr].sort((a,b)=>a-b).join`,`) return `not consecutive`;
+//       const sqrt = arr.map(Number).reduce((a,b)=>a*b)+1;
+//       return Number.isInteger(Math.sqrt(sqrt)) ? `${sqrt}, ${Math.sqrt(sqrt)}` : `not consecutive`;
+//   }
+
+// console.log(checkRoot('2,3,4,7'));
+
+// const timedReading = (maxLength, text) => 
+//     text.replace(/[^a-zA-Z]/gi, ',').split`,`.filter(el=>el).filter(el=>el.length<=maxLength).length;
+// timedReading(4,"The Fox asked the stork, 'How is the soup?'")
+
+// function onlyOne(...args) {
+//     if (args.length == 0) return false;
+//     let res = {};
+//     for (let i of args) {
+//         res[i] ? res[i]++ : res[i] = 1;
+//     }
+//     return res[true] == 1 && res[false] >= 1;
+// }
+
+// console.log(onlyOne(true, false));
+// let a2 = ["lively", "alive", "harp", "sharp", "armstrong"],
+// a1 = ["live", "strong", "arp"]
+// const inArray = (a1, a2) => {
+//     let text = a2.join`,`;
+//     return a1.filter(el=> text.includes(el)).sort();
+// }
+
+// inArray(a1,a2)
+
+// const goodVsEvil = (good, evil) => {
+    
+//     const worth = {
+//         'Hobbits': 1,
+//         'Men': 2,
+//         'Elves': 3,
+//         'Dwarves': 3,
+//         'Eagles': 4,
+//         'Wizards': 10,
+//         'Orcs': 1,
+//         'Wargs': 2,
+//         'Goblins': 2,
+//         'Uruk Hai': 3,
+//         'Trolls': 5
+//     }
+
+//     let gArr = good.split(' ').map((el, ind)=> {
+//         let race = ind==0 ? 'Hobbits' : ind==1 ? 'Men' : ind==2 ? 'Elves' : ind==3 ? 'Dwarves'
+//             : ind==4 ? 'Eagles' : 'Wizards';
+//         return [race, el]
+//     }).reduce((a,b)=>a + worth[b[0]] * b[1],0);
+
+//     let eArr = evil.split(' ').map((el, ind)=> {
+//         let race = ind==0 ? 'Orcs' : ind==1 ? 'Men' : ind==2 ? 'Wargs' : ind==3 ? 'Goblins'
+//             : ind==4 ? 'Uruk Hai' : ind==5 ? 'Trolls' : 'Wizards';
+//         return [race, el]
+//     }).reduce((a,b)=>a + worth[b[0]] * b[1],0);
+
+//     return gArr < eArr ? 'Battle Result: Evil eradicates all trace of Good' :
+//         gArr > eArr ? 'Battle Result: Good triumphs over Evil' : 
+//             'Battle Result: No victor on this battle field';
+// }
+
+// console.log(goodVsEvil('0 0 0 0 0 10', '0 1 1 1 1 0 0'));
+
+// const f = s => {
+//     console.log(s.split(/[aeiou]/gi).filter(el=>el!=='').map(el=> {
+//         let sum = 0;
+//         for (let i of el) {
+//             sum += i.charCodeAt(0) - 96;
+//         }
+//         return sum;
+//     }).sort((a,b)=>b-a)[0])
+// }
+
+// f('strength')
+
+// const bouncingBall = (h,b,w) => {
+//     if (h <= 0 || w >= h || h <= 0 || b <= 0 || b >= 1) return -1;
+//     let newH = h, ballCount = 0;
+//     while (w < newH) {
+//         newH = newH*b;
+//         ballCount += 2;
+//     }
+//     return ballCount-1;
+// }
+
+// console.log(bouncingBall(3, 0.66, 1.5));
+
+// const encryptThis = s => {
+//     let arr = s.split(" ").map(el=> {
+//         const fSymb = el[0].charCodeAt(0);
+//         if (el.length == 1) return ''+fSymb;
+//         const sSymb = el[1].charAt(0), 
+//         lSymb = el[el.length - 1].charAt(0), other = el.slice(2, el.length-1)
+//         return el.length > 2 ? `${fSymb}${lSymb+other+sSymb}` : `${fSymb}${lSymb}`;
+//     }).join(' ');
+//     return arr;
+// }
+
+// encryptThis('hello wab')
+
+// function rgb(r, g, b) {
+//     const convert = p => {
+//         if (p > 255) p = 255;
+//         if (p < 0) p = 0;
+//         let res = p.toString(16)
+//         if (res.length == 1) return '0'+res;
+//         return res;
+//     };
+//     return `${convert(r)+convert(g)+convert(b)}`.toUpperCase();
+// }
+
+// console.log(rgb(10,147,10));
+
+// const f = s => {
+//     let res = [], value = 0;
+//     for (let i of s) {
+//         if (i == 'i') {
+//             value++;
+//         } else if (i == 'd') {
+//             value--;
+//         } else if (i == 's') {
+//             value = Math.pow(value, 2);
+//         } else if (i == 'o') {
+//             res.push(value);
+//         }
+//     }
+
+//     return res;
+// }
+// f('iiisdoso')
+
+// const f = s => {
+//     const date = new Date(null);
+//     date.setSeconds(s);
+//     console.log(date.toUTCString());
+//     let arr = date.toUTCString().split(/[^0-9]/gi).filter(el=>el!='');
+//     let hh = arr[0] == '01' ? arr[2] : +arr[0] * 24 - 24 + +arr[2], mm = arr[3], ss = [arr[4]]
+//     return `${hh}:${mm}:${ss}`;
+// }
+
+// console.log(f(359999));
+
+// const vowels = {
+//     encode: {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5},
+//     decode: {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'},
+// }
+
+// const encode = s => s.replace(/[aeiou]/gi,(m)=>vowels.encode[m]);
+// const decode = s => s.replace(/[0-9]/g, (m)=>vowels.decode[m]);
+
+// console.log(encode('hello'));
+// console.log(decode('h2ll4'));
+
+// const f = s => (/\([0-9]{3}\) [0-9]{3}-[0-9]{4}/g).test(s) && s.length==14;
+
+// const foldArray = (arr, runs) => {
+//     console.log(arr, runs);
+//     const run = arr => {
+//         let copy = [...arr];
+//         const length = Math.ceil(copy.length/2);
+//         let newArr = copy.splice(length).reverse();
+//         return copy.map((_,i) => copy[i] + (newArr[i] || 0));
+//     }
+//     let counter = 0, res = [...arr];
+//     while (counter < runs) {
+//         res = run(res);
+//         counter++;
+//     }
+//     return res;
+// }
+
+// console.log(foldArray([1,2,3], 2));
