@@ -3346,3 +3346,125 @@ const coffeeLimits = (y, m, d) => {
 // }
 
 // console.log(foldArray([1,2,3], 2));
+
+// const f = (a1, a2) => (a1+a2).toString(2)
+// console.log(f(1,1));
+
+// const isTriangle = (a,b,c) => a+b>c && a+c>b && b+c>a;
+
+// const f = n => (Math.abs(n)+'').split``.reduce((a,b)=>a + +b ,0);
+
+// console.log(f(99));
+
+// const checkExam = (t, a) => {  
+//     let res = t.map((_,i)=> {
+//         return t[i] == a[i] ? 4 : a[i] == '' ? 0 : -1;
+//     }).reduce((a,b)=>a+b);
+//     return res < 0 ? 0 : res;
+// }
+
+// console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]));
+
+//  const solve = s => {
+//     let check = {l: 0, u: 0};
+//     for (let i of s) {
+//         i == i.toUpperCase() ? check.u++ : check.l++;
+//     }
+//     return check.l >= check.u ? s.toLowerCase() : s.toUpperCase();
+//  }
+
+//  solve('code')
+
+// const rowWeights = a => {
+//     let b = a.filter((_,i)=>i%2===0).reduce((p,c)=>p+c,0);
+//     let c = a.filter((_,i)=>i%2!==0).reduce((p,c)=>p+c,0);
+//     return [b,c]
+// }
+
+// console.log(rowWeights([0]));
+
+// const f = s => [...new Set(s.split(' '))].join` `;
+// f('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta')
+
+// function mxdiflg(a1, a2) {
+//     if (a1.length == 0 || a2.length == 0) return -1;
+//     let b = [...a1].sort((a,b) => a.length - b.length);
+//     let c = [...a2].sort((a,b)=> a.length - b.length);
+    
+//     console.log(b,c);
+
+//     let bSm = b[0].length, bLg = b[b.length-1].length,
+//         cSm = c[0].length, clg = c[c.length-1].length;
+
+//     console.log(bSm,bLg, cSm,clg);
+    
+//     return Math.max(Math.abs(bSm - clg), Math.abs(bLg - cSm));
+// }
+
+// let a1 = [
+//     'ejjjjmmtthh',
+//     'zxxuueeg',
+//     'aanlljrrrxx',
+//     'dqqqaaabbb',
+//     'oocccffuucccjjjkkkjyyyeehh'
+//   ]
+// let a2 = [ 'bbbaaayddqbbrrrv' ]
+
+// console.log('oocccffuucccjjjkkkjyyyeehh'.length);
+// console.log(a2[0].length);
+
+// console.log(mxdiflg(a1,a2));
+
+// getEvenNumbers=a=>a.filter(i=>i%2==0);
+
+// const f = a => {
+//     let newA = [...a].sort((a,b)=>b-a);
+//     return newA[0]+newA[1];
+// }
+
+// const isSortedAndHow = a => {
+//     let asc = [...a].sort((a,b)=>a-b).join``;
+//     let desc = [...a].sort((a,b)=>b-a).join``;
+//     return a.join`` == asc ? "yes, ascending" : a.join`` == desc ? "yes, descending" : "no";
+// }
+
+// const alphabetWar = s => {
+//     const alph = {
+//         left: {
+//             'w': 4, 'p': 3, 'b': 2, 's': 1,
+//         },
+//         right: {
+//             'm': 4, 'q': 3, 'd': 2, 'z': 1,
+//         }
+//     }
+
+//     let left = s.split``.filter(i=>(/[wpbs]/g).test(i))
+//                .map(el=>alph.left[el]).reduce((a,b)=>a+b,0);
+
+//     let right = s.split``.filter(i=>(/[mqdz]/g).test(i))
+//                 .map(el=>alph.right[el]).reduce((a,b)=>a+b,0);
+
+//     return left > right ? 'Left side wins!' : right > left ? 'Right side wins!' : "Let's fight again!"
+// }
+
+// alphabetWar('z')
+
+// const predictAge = (...ages) => Math.floor(Math.sqrt(ages.map(el=>el*el).reduce((a,b)=>a+b,0))/2)
+
+// console.log(predictAge(65, 60, 75, 55, 60, 63, 64, 45));
+
+// const bump = x => x.match(/n/g).length <= 15 ? "Woohoo!" : "Car Dead";
+
+// console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"));
+
+// const greet = name => `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`;
+
+// let f = s => {
+//     let res = [];
+//     s.replace(/[aeiouy]/gi,(_,ind)=> {
+//         res.push(ind+1)
+//     })
+//     return res;
+// }
+
+// f('Apple')
