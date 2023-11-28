@@ -3468,3 +3468,303 @@ const coffeeLimits = (y, m, d) => {
 // }
 
 // f('Apple')
+
+// var list1 = [  
+//     { firstName: 'Nikau', lastName: 'R.', country: 'New Zealand', continent: 'Oceania', age: 39, language: 'Ruby' },
+//     { firstName: 'Precious', lastName: 'G.', country: 'South Africa', continent: 'Africa', age: 22, language: 'JavaScript' },
+//     { firstName: 'Maria', lastName: 'S.', country: 'Peru', continent: 'Americas', age: 30, language: 'C' },
+//     { firstName: 'Agustin', lastName: 'V.', country: 'Uruguay', continent: 'Americas', age: 19, language: 'JavaScript' }
+//   ];
+  
+//   const sortByLanguage = arr => {
+//       return arr.sort((a,b) => {
+//         if (a.language < b.language) return -1;
+//         if (a.language > b.language) return 1;
+//         if (a.language == b.language) {
+//             return a.firstName < b.firstName ? -1 : 1;
+//         }
+//       })
+//   }
+//   console.log(sortByLanguage(list1));
+
+//   console.log('Ruby' > 'Java');
+
+
+// const reOrdering = str => {
+//     let arr = str.split(' ');
+//     let word = [...arr].filter(el => el[0] == el[0].toUpperCase()).join``;
+//     arr.splice(arr.indexOf(word), 1);
+//     return [word, ...arr].join(' ');
+// }
+
+// f('bull color pig Patrick')
+
+// function sumDigPow(a, b) {
+//     let res = [];
+//     while (a < b) {
+//         if (a < 10) res.push(a);
+//         if (a>9) {
+//             let sum = `${a}`.split('').map(Number).reduce((a,b,i)=> a+=Math.pow(b,i+1),0);
+//             if (sum == a) res.push(a);
+//         }
+//         a++;
+//     }
+//     return res;
+// }
+
+// sumDigPow(10, 150)
+
+// const f = arr => {
+//     let obj = {};
+
+//     for (let i = 0; i < arr.length; i++) {
+//         obj[arr[i]] ? obj[arr[i]]++ : obj[arr[i]] = 1;
+//     }
+
+//     return +Object.entries(obj).sort((a,b) => {
+//         if (a[1] < b[1]) return 1;
+//         if (a[1] > b[1]) return -1;
+//         if (a[1] == b[1]) {
+//             return Number(a[0]) < Number(b[0]) ? 1 : -1;
+//         }    
+//     })[0][0];
+// }
+
+// console.log(f([12, 10, 8, 12, 7, 6, 4, 10, 12]));
+
+// function upArray(arr){
+//     if ((arr.some(el => el < 0 || el > 9)) || arr.length == 0) return null;
+//     ++arr[arr.length-1];
+
+//     let n = arr.reverse().map((el,i, arr)=> {
+//         if (el >= 10) {
+//             if (arr[i + 1] == undefined);
+//             arr[i+1]++;
+//             return 0;
+//         }
+//         return el;
+//     }).reverse();
+
+//     if (n.every(el => el == 0)) n.unshift(1);
+//     return n;
+// }
+
+// console.log(upArray([9, 9, 9]));
+
+// function reverse(str){
+//     let arr = str.split(' ').filter(el=>el!=='');
+//     return arr.map((el, ind) => {
+//         return ind%2!==0 ? el.split('').reverse().join`` : el;
+//     }).join(' ');
+// }
+
+// console.log(reverse('Did it work?'));
+
+
+// Array.prototype.square = function() {
+//     return [...this].map(el=>el*el);
+// }
+
+// Array.prototype.cube = function() {
+//     return [...this].map(el=>el*el*el);
+// }
+
+// Array.prototype.average = function() {
+//     return [...this].reduce((a,b)=>a+=b,0) / this.length;
+// }
+
+// Array.prototype.sum = function() {
+//     return [...this].reduce((a,b)=>a+=b,0);
+// }
+
+// Array.prototype.even = function() {
+//     return [...this].filter(el=>el%2===0);
+// }
+
+// Array.prototype.odd = function() {
+//     return [...this].filter(el=>el%2!==0);
+// }
+
+// console.log([1,2,3].average());
+
+// function dashatize(num) {
+//     if (!Number.isInteger(num)) return 'NaN';
+//     let str = String(Math.abs(num))
+//     if (str.length === 1) return str;
+//     return str.split('').map((el,ind, arr) => {
+//         if (el%2!==0) {
+//             if (ind === 0) return `${el}-`;
+//             if (ind === arr.length-1) return `-${el}`;
+//             return `-${el}-`; 
+//         }
+//         return el;
+//     }).join``.split('').map((_, i, a) => {
+//         if (a[i] === a[i+1] && _ == '-') {
+//             return null;
+//         }
+//         return _;
+//     }).filter(el=>el!==null).join``;
+// }
+
+// console.log(dashatize(86320));
+
+// const f = str => {
+
+//     let arr = (str[0].toUpperCase()+str.slice(1)).replace(/\d/g, '').replace(/[A-Z]/g, (m,i)=> {
+//         return i !== 0 ? `-${m}`.toLowerCase() : m.toLowerCase();
+//     })
+//     return arr;
+// }
+
+// console.log(f('camelsHaveThreeHumps'));
+
+// const noonerize = arr => {
+//     if (arr.some(el => typeof el !== 'number')) return "invalid array";
+//     arr = arr.map(String);
+//     return Math.abs([arr[1][0]+arr[0].slice(1), arr[0][0]+arr[1].slice(1)].map(Number).reduce((a,b)=>b-a));
+// }
+
+// console.log(noonerize([ 1000000, 'hello' ]));
+
+// const points = arr => {
+//     let counter = 0;
+//     arr.forEach(el => {
+//         const [x,y] = el.split(':');
+//         switch (true) {
+//             case x < y:
+//                 counter+=0;
+//                 break;
+//             case x > y:
+//                 counter+=3;
+//                 break;
+//             default:
+//                 counter+=1;
+//                 break;
+//         }
+//     })
+//     return counter;
+// }
+
+// console.log(points(['1:2', '1:1', '3:0']));
+
+// const flip=(d, a)=>{
+//     return a.sort((a,b) => d == 'R' ? a-b : b-a);
+// }
+
+// const validate = num => {
+//     let sum = String(num).split('').reverse().map((el,i)=>{
+//         if (i % 2 !== 0) {
+//             if (el >= 5) {
+//                 return el*2-9;
+//             }
+//             return el*2;
+//         }
+
+//         return +el;
+//     }).reverse().reduce((a,b)=>a+b,0);
+
+//     return sum % 10 == 0;
+// }
+
+// console.log(validate(123));
+
+//65-90
+
+// const playPass = (s, n) => s.toUpperCase().split('').map(((el) => {
+//         if (/[0-9]/.test(el)) {
+//             return `${9-el}`;
+//         } else if (/[A-Z]/.test(el)) {
+//             let char = el.charCodeAt(0) + n;
+//             return String.fromCharCode(char > 90 ? 64 + char - 90 : char);
+//         } else {
+//             return el;
+//         }
+//     })).map((v, i) => {
+//         return i%2!==0 ? v.toLowerCase() : v.toUpperCase()
+//     }).reverse().join``;
+
+// playPass("Hello123", 1)
+
+
+// console.log(['a', 'b', '1'].map((el, i) => {
+//     return i%2!==0 ? el.toLowerCase() : el.toUpperCase()
+// }));
+
+// const pyramid = n => {
+//     let res = []
+//     if (n <= 0) return res;
+
+//     for (let i = 1; i <= n; i++) {
+//         res.push('1'.repeat(i).split``.map(Number))
+//     }
+
+//     return res;
+// }
+// console.log(pyramid(3));
+
+// const nato = {
+//     A: "Alfa",
+//     B: "Bravo",
+//     C: "Charlie",
+//     D: "Delta",
+//     E: "Echo",
+//     F: "Foxtrot",
+//     G: "Golf",
+//     H: "Hotel",
+//     I: "India",
+//     J: "Juliett",
+//     K: "Kilo",
+//     L: "Lima",
+//     M: "Mike",
+//     N: "November",
+//     O: "Oscar",
+//     P: "Papa",
+//     Q: "Quebec",
+//     R: "Romeo",
+//     S: "Sierra",
+//     T: "Tango",
+//     U: "Uniform",
+//     V: "Victor",
+//     W: "Whiskey",
+//     X: "Xray",
+//     Y: "Yankee",
+//     Z: "Zulu"
+// };
+
+// const to_nato = w => w.toUpperCase().split(' ').map(el => {
+//         return el.split('').map(i => nato[i] ? nato[i] : i).join(' ');
+//     }).join(' ');
+
+// const s = 'abc def ghj';
+
+// const f = w => {
+//     let arr = [];
+//     for (let i = w.length; i >= 0; i--) {
+//         arr.push(w[i]);
+//     }
+//     return arr.join``;
+// }
+
+// const rev = sent => sent.split(' ').map(el => {
+//     return f(el);
+// }).join(' ');
+
+// console.log(rev(s));
+
+// function factorial(n) {
+//   let res = 1;
+//   if (n == 0) return res;
+//   if (n < 0 || n > 12) throw new RangeError();
+//   while (n >= 1) {
+//     res*=n;
+//     n--;
+//   }
+//   return res;
+// }
+
+// console.log(factorial(4));
+
+// minValue=v=>+[...new Set(v)].sort((a,b)=>a-b).join``;
+// console.log(minValue([5, 7, 9, 5, 7]));
+
+// const factorial = n => n ? factorial(n - 1) * n : 1;

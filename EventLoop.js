@@ -306,3 +306,4 @@
 // const countBalance = str = { str.split(/[a-z]/gi).map(el => parseFloat(el))
 //  .filter(el => !Number.isNaN(el)).sort((a,b) => b-a).reduce((pr, curr) => pr - curr);
 // countBalance(text)
+
