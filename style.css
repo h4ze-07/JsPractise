@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border: 15px 20px;
+}
+
+::-webkit-scrollbar-button {
+}
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+
+}
+
+.he {
+    text-decoration: line-through;
+}
+
+.pre {
+    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+}
+
+#comment {
+    outline: none;
+    resize: none;
+    max-width: 200px;
+    max-height: 120px;
+}

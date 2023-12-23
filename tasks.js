@@ -3768,3 +3768,22 @@ const coffeeLimits = (y, m, d) => {
 // console.log(minValue([5, 7, 9, 5, 7]));
 
 // const factorial = n => n ? factorial(n - 1) * n : 1;
+
+// const cards = {
+//     U: 1,
+//     C: 2,
+//     R: 3,
+//     E: 4, 
+//     S: 5,
+//     L: 6
+// }
+
+// function sortSet(arr) {
+//     return arr.sort((a,b)=> {
+//         if (cards[a] > cards[b]) return 1;
+//         if (cards[a] < cards[b]) return -1;
+//         if (cards[a] == cards[b]) return 0;
+//     })
+// }
+
+// console.log(sortSet(['L', 'R', 'R']));

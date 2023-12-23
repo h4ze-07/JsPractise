@@ -307,3 +307,64 @@
 //  .filter(el => !Number.isNaN(el)).sort((a,b) => b-a).reduce((pr, curr) => pr - curr);
 // countBalance(text)
 
+
+
+// console.log('1');
+
+// setTimeout(() => console.log(2))
+// setTimeout(() => new Promise((resolve, reject) => {
+//     resolve()
+//     console.log(3);
+// }), 1000)
+
+// async function func(){
+//     return new Promise(resolve => {
+//         resolve()
+//         console.log(4);
+//     }).then(() =>  console.log('5'))
+// }
+
+// queueMicrotask(() => {
+//     console.log(6);
+// })
+
+// console.log(7);
+// func()
+
+
+// 1 7 4 6 5 2 3
+
+const body = document.querySelector('body')
+
+
+body.insertAdjacentHTML('beforeend', `<button class='btn' onclick='handleClick();'>Click</button>`);
+
+let colorHandler = false;
+
+const handleClick = () => {
+    let check = body.getElementsByTagName('h1');
+    if (check.length === 0) {
+        body.insertAdjacentHTML(
+            'afterbegin',
+            `<h1>Hello world!</h1>`
+        )
+    }
+    colorHandler = !colorHandler;
+    console.log(colorHandler);
+    colorHandler ? body.style.backgroundColor = 'red' : body.style.backgroundColor = 'white';
+}
+
+const handleBtnClick = (e) => {
+    e.preventDefault()
+    alert(`name: ${inpName.value}\ntel: ${inpTel.value}`)
+    inpName.value = '';
+    inpTel.value = '';
+}
+
+const form = document.forms.info;
+
+const inpName = form[0]
+const inpTel = form[1]
+const btn = form[2].addEventListener('click', handleBtnClick)
+
+
