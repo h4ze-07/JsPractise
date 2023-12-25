@@ -368,3 +368,8 @@ const inpTel = form[1]
 const btn = form[2].addEventListener('click', handleBtnClick)
 
 
+function remove (string) {
+   return string.charAt(string.length-1) == '!' ? string.slice(0, -1) : string; 
+}
+
+console.log(remove('Hi!!!'));
