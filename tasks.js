@@ -3787,3 +3787,84 @@ const coffeeLimits = (y, m, d) => {
 // }
 
 // console.log(sortSet(['L', 'R', 'R']));
+
+// function digitize(n) {
+//     return `${n}`.split('').map(Number).reverse()
+// }
+// console.log(digitize(35231));
+
+// const reducer = s => s.split('').reduce((a,b) => +a + +b);
+
+// function calc(x){
+//     let a = x.split('').map(el => el.charCodeAt(0)).reduce((a, b) => a+b, '');
+//     let b = a.replace(/7/gi, 1);
+//     return reducer(a) - reducer(b);
+// }
+
+// console.log(calc('aaaaaddddr'));
+
+// const averages = a => {
+//     let res = [];
+//     if (!a) return res;
+//     for (let i = 0; i < a.length - 1; i++) {
+//         res.push((a[i]+a[i+1])/2)
+//     }
+//     return res;
+// }
+
+// console.log(averages([2, -2, 2, -2, 2]));
+
+// const getMissingElement = a => {
+//     let newA = [...a].sort();
+//     for (let i = 0; i < 10; i++) {
+//         if (i !== newA[i]) return i;
+//     }
+// }
+
+// console.log(getMissingElement([3, 2, 4, 5, 7, 0, 8, 6, 1]));
+
+// const findDigit = (d,n) => {
+//     if (n <= 0) return -1;
+//     let res = `${Math.abs(d)}`;
+//     let searchedValue = res.length - n;
+//     return searchedValue <= -1 ? 0 : +res[searchedValue];
+// }
+// console.log(findDigit(24, -8))
+
+// const cubeOdd = a => 
+//     a.some(el => typeof(el) !== 'number') ? undefined :
+//         a.filter(el => el%2 !== 0).map(el => Math.pow(el, 3)).reduce((a,b) => a+b)
+
+
+// console.log(cubeOdd([-3,-2,2,3]));
+
+// const hasUniqueChars = str => str === [...new Set(str)].join``;
+// console.log(hasUniqueChars('  nAa'))
+
+// const sumEvenNumbers = a => a.length <= 0 ? 0 : a.filter(e=>e%2==0).reduce((a,b)=>a+b);
+
+// const test = a => {
+//     if (a) {
+//         console.log('here');
+//     }
+
+//     if (!a) {
+//         console.log('not here');
+//     }
+// }
+// console.log(!!([].length));
+
+// const f = num => {
+//     let res = Number(`${Math.abs(num)}`.split('').reverse().join(''));
+//     return num < 0 ? -res : res;
+// }
+// console.log(f(-123));
+
+// const sumCubes = n => {
+//     let res = 0;
+//     for (let i = 1; i <= n; i++) {
+//         res+=Math.pow(i, 3)
+//     }
+//     return res;
+// }
+// console.log(sumCubes(2));
