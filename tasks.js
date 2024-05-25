@@ -3868,3 +3868,83 @@ const coffeeLimits = (y, m, d) => {
 //     return res;
 // }
 // console.log(sumCubes(2));
+
+
+
+// const isItLetter = char => {
+//     const ch = char.toLowerCase().charCodeAt(0);
+//     return ch >= 97 && ch <= 122;
+// } 
+
+
+// function findSmallestInt(arr) {
+//     return arr.reduce((pr, curr) => {
+//         return pr < curr ? pr : curr
+//     }, arr[0]);
+// }
+
+
+// console.log(findSmallestInt([1,2,3,4]));
+
+// const countSheep = n => {
+//     let result = '';
+//     for (let i = 1; i <= n; i++) {
+//         result += `${i} sheep...`
+//     }
+//     return result;
+// }
+
+// console.log(countSheep(2));
+
+// const phones = [
+//     'Samsung A14',
+//     'Samsung S22',
+//     'Samsung A34',
+//     'Ipnone 15',
+//     'Samsung A24',
+//     'Samsung S23',
+//     'Ipnone 15 Pro',
+//     'Ipnone 11',
+//     'Ipnone 13 Pro',
+// ]
+
+// const sortedListOfGoods = list => {
+//     let result = [...list].sort()
+//     console.log(result);
+// }
+
+// sortedListOfGoods(phones);
+
+
+// function rpsls(pl1, pl2){
+//     if (pl1 === pl2) return "Draw!";
+
+//     const game = {
+//         'rock': ['lizard', 'scissors'],
+//         'paper': ['rock', 'spock'],
+//         'scissors': ['paper', 'lizard'],
+//         'lizard': ['spock', 'paper'],
+//         'spock': ['scissors', 'rock'],
+//     }
+    
+//     return game[pl1].find(i => i === pl2) ?
+//         "Player 1 Won!" : "Player 2 Won!";
+// }
+
+// rpsls('lizard','scissors')
+
+// function sumOfN(n) {
+//     let result = [0];
+
+//     for (let i = 1; i <= Math.abs(n); i++) {
+//         const curr = result[result.length - 1];
+//         const toSec = n < 0 ? curr - i : curr + i;
+//         result.push(toSec);
+//     }
+
+    
+//     return result;
+// }
+
+// sumOfN(7)
+
